@@ -1,6 +1,8 @@
 //Code modified from: https://developers.google.com/web/ilt/pwa/lab-caching-files-with-service-worker
 const filesToCache = [                                              //cache everything your app will need to load the app shell
     '/',
+    'images/menu.png',
+    'app.js',
     'style/main.css',
     'index.html'
   ];

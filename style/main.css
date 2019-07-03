@@ -1,0 +1,37 @@
+.topnav {
+    color: white;
+    overflow: hidden;
+    background-color: darkorchid;
+    position: relative; 
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: white;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: purple;
+    display: block;
+    position: absolute;
+    float: left;
+  }
+  
+  .topnav h2 {
+    text-align: center;
+  }
+  
+  .topnav a:hover {
+    background-color: purple;
+  }
+
+  .transitionary {
+    transition: all .5s;
+  }
