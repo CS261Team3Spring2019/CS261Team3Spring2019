@@ -1,0 +1,42 @@
+#splashMainDiv {
+    background-image: url("../images/artists-band-concert-2167131.jpg");
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: -7;
+  }
+
+#splashLogoContainer{
+  width: 100%;
+  position: absolute;
+  top: 10%;
+}
+
+#splashLogo {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 7
+}
+
+#splashLogo img {
+  width:100%;
+}
+
+#splashContinueButtonContainer {
+  width: 100%;
+  position: absolute;
+  bottom: 15%;
+}
+
+#splashContinueButton {
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
