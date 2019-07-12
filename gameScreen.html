@@ -6,12 +6,37 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
         <link rel="stylesheet" href="style/main.css">
-        <link rel="stylesheet" href="style/instructions.css">
+        <link rel="stylesheet" href="style/gameScreen.css">
     </head>
     <body>
-        <div id="instructionsContainer">
-            <div id="instructionsInnerContainer">
-                
+        <div id="gameContainer">
+
+
+            <div id="lyricsContainer">
+                <pre id="lyrics">
+Just a young gun with a quick fuse
+I was uptight, wanna let loose
+I was dreaming of bigger things
+And wanna leave my own life behind
+
+Not a yes sir, not a follower
+Fit the box, fit the mold
+Have a seat in the foyer, take a number
+I was lightning before the thunder
+
+Thunder, thunder
+Thunder, thun’, thunder
+Thun-thun-thunder, thunder, thunder
+Thunder, thun’, thunder
+Thun-thun-thunder, thunder
+Thunder, feel the thunder
+                </pre>
+            </div>
+            <h3>Select Your Answer:</h3>
+            <div id="answerContainer">
+                <button type="button" class="correct">ANSWER 1</button>
+                <button type="button" class="incorrect">ANSWER 2</button>
+                <button type="button">ANSWER 3</button>
             </div>
         </div>
 
@@ -19,6 +44,15 @@
         <div id="backButton">
             <a href="#"><img src="images/BackButton.svg"></a>
         </div>
+
+        <div id="timeCountDown">
+            <h3>TIME LEFT: <strong>15sec</strong></h3>
+        </div>
+
+        <div id="answerOverlay">
+
+        </div>
+        <button type="button">INCORRECT</button> 
 
         <div id="noRotate">
             <h2>Please don't Rotate</h2>

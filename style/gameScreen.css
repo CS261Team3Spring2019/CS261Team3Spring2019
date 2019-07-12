@@ -1,61 +1,79 @@
-#instructionsContainer{
-  width: 100%;
-  position: absolute;
-  top: 0px;
-  bottom:0px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-#instructionsInnerContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#instructionsLogo {
-  width: 25%;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 0
-}
-
-#instructionsLogo img {
-  width:100%;
-}
-
-#instructionsSetupHeader {
-    width: 100%;
-}
-
-#instructionsRecordImage {
-    background-image: url("../images/album-audio-classic-1616470.jpg");
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-
-#instructionsSetupHeader h2 {
-  text-align: center;
-  color: var(--color_teal);
-  letter-spacing: 5px;
-  text-align: center;
-  border-bottom: 3px solid var(--color_dark_Blue);
-}
-
-.instructionsListContainer {
-    margin-top:20px;
-    border-top: 3px solid var(--color_dark_Blue);
-}
-
 h3 {
   font-style: normal;
   font-weight: 400;
   text-align: center;
   letter-spacing: 3px;
-  margin: 15px 0px 0px;
+  margin: 15px 0px 15px;
+  color: var(--color_dark_Blue);
+}
+
+#gameContainer {
+    position: fixed;
+    top: 60px;
+    width: 100%;
+}
+
+
+#lyricsContainer {
+    margin: 10px auto;
+    width: 80%;
+    height: 180px;
+    overflow-y: scroll;
+    border-bottom: 3px solid var(--color_dark_Blue);
+    padding-bottom: 10px;
+}
+
+#lyrics {
+    color: var(--color_teal);
+}
+
+#scrollGuide {
+    margin: 0px;
+    text-align: center;
+    color: grey;
+}
+
+#answerContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#answerContainer button {
+    margin-bottom: 30px;
+}
+
+#timeCountDown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#timeCountDown h3 {
+    color: var(--color_dark_Blue);
+    margin: 0px;
+}
+
+#timeCountDown h3 strong {
+    color: var(--color_green);
+}
+
+.correct {
+    background-color: var(--color_green);
+    color: var(--color_white);
+}
+
+.incorrect {
+    background-color: var(--color_red);
+    color: var(--color_white);
+}
+
+#answerOverlay {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    background-color: var(--color-white);
+    filter: blur(8px);
 }
 
 ul {
@@ -65,7 +83,9 @@ ul {
 }
 
 #backButton {
-    margin: 10px;
+    position:absolute;
+    top: 10px;
+    left: 10px;
 }
 
 @media only screen and (min-height: 600px) {
