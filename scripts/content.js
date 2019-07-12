@@ -82,3 +82,52 @@ instructions = `
     <h2>Please don't Rotate</h2>
     <p>This game is best played in portrait mode.</p>
 </div>`
+
+gameScreen = `
+<div id="flexContainer">
+    <div id="gameContainer" class=""> <!--Add blur when answer selected.-->
+        <div id="lyricsContainer">
+            <pre id="lyrics">
+Just a young gun with a quick fuse
+I was uptight, wanna let loose
+I was dreaming of bigger things
+And wanna leave my own life behind
+
+Not a yes sir, not a follower
+Fit the box, fit the mold
+Have a seat in the foyer, take a number
+I was lightning before the thunder
+
+Thunder, thunder
+Thunder, thun’, thunder
+Thun-thun-thunder, thunder, thunder
+Thunder, thun’, thunder
+Thun-thun-thunder, thunder
+Thunder, feel the thunder
+            </pre>
+        </div>
+        <h3>Select Your Answer:</h3>
+        <div id="answerContainer">
+            <button type="button" class="correct">ANSWER 1</button>
+            <button type="button" class="incorrect">ANSWER 2</button>
+            <button type="button">ANSWER 3</button>
+        </div>
+    </div>
+</div>
+
+<div id="backButton">
+    <a href="#"><img src="images/BackButton.svg"></a>
+</div>
+
+<div id="timeCountDown">
+    <h3>TIME LEFT: <strong id="timeRemaining">15sec</strong></h3>
+</div>
+<!-- Hidden until answer select, to display properly change display to flex in css -->
+<div id="answerOverlay">
+    <button type="button" id="answerStatus">INCORRECT</button>
+</div>
+
+<div id="noRotate">
+    <h2>Please don't Rotate</h2>
+    <p>This game is best played in portrait mode.</p>
+</div>`
