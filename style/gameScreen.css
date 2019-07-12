@@ -7,10 +7,25 @@ h3 {
   color: var(--color_dark_Blue);
 }
 
-#gameContainer {
-    position: fixed;
-    top: 60px;
+#flexContainer {
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#gameContainer {
+    /* position: relative;
+    top: 60px; */
+    /* width: 100%; */
+}
+
+.blur {
+    filter: blur(3px);
 }
 
 
@@ -70,10 +85,22 @@ h3 {
 #answerOverlay {
     position: absolute;
     width: 100%;
+    height: 100%;
     top: 0px;
     bottom: 0px;
-    background-color: var(--color-white);
-    filter: blur(8px);
+    display: none; /* Change to flex to display */
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#answerOverlay button {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#answerStatus {
+    z-index: 7;
 }
 
 ul {
@@ -87,6 +114,22 @@ ul {
     top: 10px;
     left: 10px;
 }
+
+@media only screen and (min-height: 800px) {
+
+    #lyricsContainer {
+        height: 350px;
+    }
+}
+
+@media only screen and (min-height: 700px) {
+
+    #lyricsContainer {
+        height: 250px;
+    }
+}
+
+
 
 @media only screen and (min-height: 600px) {
 
