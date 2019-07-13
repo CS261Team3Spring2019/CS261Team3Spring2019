@@ -1,4 +1,4 @@
-splash = `
+const splash = `
 <div id="splashMainDiv"></div>
 <div id="splashLogoContainer">
     <div id="splashLogo">
@@ -15,7 +15,7 @@ splash = `
     <p>This game is best played in portrait mode.</p>
 </div>`
 
-home = `
+const home = `
 <div id="homeContainer">
     <div id="homeInnerContainer">
         <div id="homeLogo">
@@ -46,7 +46,7 @@ home = `
     <p>This game is best played in portrait mode.</p>
 </div>`
 
-instructions = `
+const instructions = `
 <div id="instructionsContainer">
     <div id="instructionsInnerContainer">
         <div id="instructionsLogo">
@@ -78,7 +78,7 @@ instructions = `
     <p>This game is best played in portrait mode.</p>
 </div>`
 
-gameScreen = `
+const gameScreen = `
 <div id="gameScreenFlexContainer">
     <div id="gameContainer" class=""> <!--Add blur when answer button or back button is selected.-->
         <div id="lyricsContainer">
@@ -139,7 +139,7 @@ Thunder, feel the thunder
     <p>This game is best played in portrait mode.</p>
 </div>`
 
-var summary = `
+const summary = `
 <div id="summaryFlexContainer">
     <div id="summaryContainer" class=""> <!--Add blur when answer button or back button is selected.-->
         <h2 id="songTitle">SONG TITLE</h2>
@@ -170,7 +170,7 @@ var summary = `
     <p>This game is best played in portrait mode.</p>
 </div>`
 
-var results = `
+const results = `
 <div id="resultsFlexContainer">
     <div id="resultsContainer" class=""> <!--Add blur when answer button or back button is selected.-->
         <h2>HERE'S YOUR RESULTS</h2>
