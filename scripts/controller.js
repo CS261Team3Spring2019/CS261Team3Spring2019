@@ -1,6 +1,7 @@
 let app = document.getElementById('app-loader')
 
 pageMap = {
+    'splash': splash,
     'home': home,
     'instructions': instructions,
     'gameScreen': gameScreen,
@@ -9,7 +10,7 @@ pageMap = {
 }
 
 window.onload = function() {
-    app.innerHTML = splash
+    loadPage('splash')
 }
 
 
@@ -29,6 +30,30 @@ function updateNumQuestions(num) {
     } else {
         document.getElementById('homeOptionButtons' + numQuestions).setAttribute('class', 'optionButton')
     }
-    
+
     numQuestions = num
+}
+
+function startGame() {
+    loadPage('gameScreen')
+}
+
+function confirmExit() {
+    
+}
+
+function sumbitAnswer(num) {
+
+}
+
+function endGame() {
+
+}
+
+function cancelQuit() {
+
+}
+
+function getNextQuestion() {
+
 }
