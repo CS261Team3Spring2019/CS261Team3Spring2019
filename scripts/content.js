@@ -2,12 +2,12 @@ splash = `
 <div id="splashMainDiv"></div>
 <div id="splashLogoContainer">
     <div id="splashLogo">
-        <img src="images/logo.svg" alt="">
+        <img src="images/logo.svg" alt="" >
     </div>
 </div>
 <div id="splashContinueButtonContainer">
     <div id="splashContinueButton">
-        <button type="button">CONTINUE</button>
+        <button type="button" onclick="loadPage('home')">CONTINUE</button>
     </div>
 </div>
 <div id="noRotate">
@@ -22,33 +22,25 @@ home = `
             <img src="images/logo.svg" alt="" >
         </div>
         <div class="homeButton">
-            <button type="button">START GAME</button>
+            <button type="button" onclick="startGame()">START GAME</button>
         </div>
         <div class="homeButton">
-            <button type="button">INSTRUCTIONS</button>
+            <button type="button" onclick="loadPage('instructions')">INSTRUCTIONS</button>
         </div>
         <div id="homeSetupHeader">
             <h2>– setup –</h2>
         </div>
-        <div>
+        <div id="homeSetupOptionHeader">
             <h3>Number of Questions</h3>
         </div>
         <div id="homeQuestionOptionButtons">
-            <button class="optionButton selected single">5</button>
-            <button class="optionButton">10</button>
-            <button class="optionButton">15</button>
-        </div>
-        <div>
-            <h3>Seconds to Guess</h3>
-        </div>
-        <div id="homeQuestionOptionButtons">
-            <button class="optionButton single">5</button>
-            <button class="optionButton selected">10</button>
-            <button class="optionButton">15</button>
+            <button id="homeOptionButtons5" class="optionButton selected single" onclick="updateNumQuestions(5)">5</button>
+            <button id="homeOptionButtons10" class="optionButton" onclick="updateNumQuestions(10)">10</button>
+            <button id="homeOptionButtons15" class="optionButton" onclick="updateNumQuestions(15)">15</button>
         </div>
     </div>
 </div>
-<div id="homeContinueButtonContainer"></div>
+
 <div id="noRotate">
     <h2>Please don't Rotate</h2>
     <p>This game is best played in portrait mode.</p>
@@ -64,7 +56,7 @@ instructions = `
             <h2>INSTRUCTIONS</h2>
             <div id="instructionsRecordImage"></div>
         </div>
-        <div class="instructionsListContainer">
+        <div id="instructionsListContainer">
             <ul>
                 <li><strong>Step 1</strong>: Select the number of songs you would like to guess</li>
                 <li><strong>Step 2</strong>: Select the number of seconds you want to be able to guess</li>
@@ -75,17 +67,20 @@ instructions = `
         </div>
     </div>
 </div>
+
+
 <div id="backButton">
-    <a href="#"><img src="images/BackButton.svg"></a>
+    <img src="images/BackButton.svg" onclick="loadPage('home')">
 </div>
+
 <div id="noRotate">
     <h2>Please don't Rotate</h2>
     <p>This game is best played in portrait mode.</p>
 </div>`
 
 gameScreen = `
-<div id="flexContainer">
-    <div id="gameContainer" class=""> <!--Add blur when answer selected.-->
+<div id="gameScreenFlexContainer">
+    <div id="gameContainer" class=""> <!--Add blur when answer button or back button is selected.-->
         <div id="lyricsContainer">
             <pre id="lyrics">
 Just a young gun with a quick fuse
@@ -108,23 +103,94 @@ Thunder, feel the thunder
         </div>
         <h3>Select Your Answer:</h3>
         <div id="answerContainer">
-            <button type="button" class="correct">ANSWER 1</button>
-            <button type="button" class="incorrect">ANSWER 2</button>
-            <button type="button">ANSWER 3</button>
+            <button id="answer1" type="button" class="correct" onclick="submitAnswer(1)">ANSWER 1</button>
+            <button id="answer2" type="button" class="incorrect" onclick="submitAnswer(2)">ANSWER 2</button>
+            <button id="answer3" type="button" onclick="submitAnswer(3)">ANSWER 3</button>
         </div>
     </div>
 </div>
 
 <div id="backButton">
-    <a href="#"><img src="images/BackButton.svg"></a>
+    <img src="images/BackButton.svg" onclick="confirmExit()">
 </div>
 
 <div id="timeCountDown">
     <h3>TIME LEFT: <strong id="timeRemaining">15sec</strong></h3>
 </div>
-<!-- Hidden until answer select, to display properly change display to flex in css -->
+
+<!-- Hidden until answer is selected, to display properly change display to flex in css -->
 <div id="answerOverlay">
-    <button type="button" id="answerStatus">INCORRECT</button>
+    <!-- The text displayed in this button needs to be dynamically updated to either correct or incorrect -->
+    <button type="button" id="answerStatus" onclick="loadPage('summary')">INCORRECT</button>
+</div>
+
+<div id="confirmExit">
+    <h4>ARE YOU SURE?</h4>
+    <p>This will</p>
+    <p>end your game.</p>
+    <div id="confirmButtons">
+        <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
+        <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
+    </div>
+</div>
+
+<div id="noRotate">
+    <h2>Please don't Rotate</h2>
+    <p>This game is best played in portrait mode.</p>
+</div>`
+
+var summary = `
+<div id="summaryFlexContainer">
+    <div id="summaryContainer" class=""> <!--Add blur when answer button or back button is selected.-->
+        <h2 id="songTitle">SONG TITLE</h2>
+        <h3>YEAR RELEASED</h3>
+        <h4 id="songYear">2017</h4>
+        <h3>ARTIST</h3>
+        <h4 id="songArtist">Song Artist</h4>
+        <button id="nextQuestion" type="button" onclick="getNextQuestion()">NEXT QUESTION</button>
+    </div>
+</div>
+
+<div id="backButton">
+    <img src="images/BackButton.svg" onclick="confirmExit()">
+</div>
+
+<div id="confirmExit">
+    <h4>ARE YOU SURE?</h4>
+    <p>This will</p>
+    <p>end your game.</p>
+    <div id="confirmButtons">
+        <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
+        <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
+    </div>
+</div>
+
+<div id="noRotate">
+    <h2>Please don't Rotate</h2>
+    <p>This game is best played in portrait mode.</p>
+</div>`
+
+var results = `
+<div id="resultsFlexContainer">
+    <div id="resultsContainer" class=""> <!--Add blur when answer button or back button is selected.-->
+        <h2>HERE'S YOUR RESULTS</h2>
+        <h3>You got <span>11 out of 15</span> correct  </h3>
+        <button id="nextQuestion" type="button" onclick="getNextQuestion()">BACK TO HOME</button>
+    </div>
+</div>
+
+<div id="backButton">
+    <img src="images/BackButton.svg" onclick="confirmExit()">
+</div>
+
+<div id="confirmExit">
+    <h4>ARE YOU SURE?</h4>
+    <p>This will</p>
+    <p>end your game.</p>
+    <div id="confirmButtons">
+        <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
+        <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
+    </div>
 </div>
 
 <div id="noRotate">

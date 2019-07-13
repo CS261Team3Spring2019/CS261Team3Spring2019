@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Who Sang That?</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <link rel="stylesheet" href="style/main.css">
+    </head>
+    <body>
+        <div id="summaryFlexContainer">
+            <div id="summaryContainer" class=""> <!--Add blur when answer button or back button is selected.-->
+                <h2 id="songTitle">SONG TITLE</h2>
+                <h3>YEAR RELEASED</h3>
+                <h4 id="songYear">2017</h4>
+                <h3>ARTIST</h3>
+                <h4 id="songArtist">Song Artist</h4>
+                <button id="nextQuestion" type="button" onclick="getNextQuestion()">NEXT QUESTION</button>
+            </div>
+        </div>
+
+        <div id="backButton">
+            <img src="images/BackButton.svg" onclick="confirmExit()">
+        </div>
+
+        <div id="confirmExit">
+            <h4>ARE YOU SURE?</h4>
+            <p>This will</p>
+            <p>end your game.</p>
+            <div id="confirmButtons">
+                <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
+                <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
+            </div>
+        </div>
+
+        <div id="noRotate">
+            <h2>Please don't Rotate</h2>
+            <p>This game is best played in portrait mode.</p>
+        </div>
+
+        <script src="scripts/noRotate.js"></script>
+    </body>
+</html>

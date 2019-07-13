@@ -6,7 +6,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
         <link rel="stylesheet" href="style/main.css">
-        <link rel="stylesheet" href="style/home.css">
     </head>
     <body>
         <div id="homeContainer">
@@ -15,43 +14,31 @@
                     <img src="images/logo.svg" alt="" >
                 </div>
                 <div class="homeButton">
-                    <button type="button">START GAME</button>
+                    <button type="button" onclick="startGame()">START GAME</button>
                 </div>
                 <div class="homeButton">
-                    <button type="button">INSTRUCTIONS</button>
+                    <button type="button" onclick="loadPage('instructions')">INSTRUCTIONS</button>
                 </div>
                 <div id="homeSetupHeader">
                     <h2>– setup –</h2>
                 </div>
-                <div>
+                <div id="homeSetupOptionHeader">
                     <h3>Number of Questions</h3>
                 </div>
                 <div id="homeQuestionOptionButtons">
-                    <button class="optionButton selected single">5</button>
-                    <button class="optionButton">10</button>
-                    <button class="optionButton">15</button>
-                </div>
-                <div>
-                    <h3>Seconds to Guess</h3>
-                </div>
-                <div id="homeQuestionOptionButtons">
-                    <button class="optionButton single">5</button>
-                    <button class="optionButton selected">10</button>
-                    <button class="optionButton">15</button>
+                    <button id="homeOptionButtons5" class="optionButton selected single" onclick="updateNumQuestions(5)">5</button>
+                    <button id="homeOptionButtons10" class="optionButton" onclick="updateNumQuestions(10)">10</button>
+                    <button id="homeOptionButtons15" class="optionButton" onclick="updateNumQuestions(15)">15</button>
                 </div>
             </div>
-        </div>
-
-        <div id="homeContinueButtonContainer">
-            
         </div>
 
         <div id="noRotate">
             <h2>Please don't Rotate</h2>
             <p>This game is best played in portrait mode.</p>
         </div>
-        
-        
+
+
         <script src="scripts/noRotate.js"></script>
     </body>
 </html>
