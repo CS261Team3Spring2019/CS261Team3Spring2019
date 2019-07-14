@@ -1,11 +1,28 @@
 //Code modified from: https://developers.google.com/web/ilt/pwa/lab-caching-files-with-service-worker
 const filesToCache = [                                              //cache everything your app will need to load the app shell
     '/',
-    'images/menu.png',
-    'app.js',
-    'style/main.css',
-    'index.html',
-    'scripts/content.js'
+    'htmlSource/gamesScreen.html',
+    'htmlSource/home.html',
+    'htmlSource/instructions.html',
+    'htmlSource/splash.html',
+    'htmlSource/results.html',
+    'htmlSource/summary.html',
+    'images/album-audio-classic-1616470.jpg',
+    'images/artists-band-concert-2167131.jpg',
+    'images/BackButton.svg',
+    'images/BlankButton.svg',
+    'images/Logo.svg',
+    'scripts/ajax.thread.js',
+    'scripts/apiObj.class.js',
+    'scripts/app.js',
+    'scripts/content.js',
+    'scripts/controller.js',
+    'scripts/noRotate.js',
+    'scripts/questionObj.class.js',
+    'scripts/songObj.class.js',
+    'scripts/userObj.class.js',
+    'scripts/variables.js',
+    'style/main.css'
   ];
 
   const staticCacheName = 'cachedpages';
