@@ -9,7 +9,7 @@
   --color_teal: rgba(32,183,183,255);
 }
 
-html, body {
+html, body, pre {
   margin: 0px;
   font-family: futura-pt, sans-serif;
   font-weight: 400;
@@ -33,6 +33,9 @@ button {
   font-weight: bold;
   letter-spacing: 5px;
   outline: none;
+  -webkit-box-shadow: 3px 3px 12px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 12px -2px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 12px -2px rgba(0,0,0,0.75);
 }
 
 #noRotate {
@@ -52,6 +55,490 @@ button {
     font-size: 20px;
     height: 50px;
     border-top-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
+}
+
+
+/* ========================================================================================= */
+/* Beginning of Splash page CSS */
+
+#splashMainDiv {
+    background-image: url("../images/artists-band-concert-2167131.jpg");
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: -7;
+  }
+
+#splashLogoContainer{
+  width: 100%;
+  position: absolute;
+  top: 10%;
+}
+
+#splashLogo {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 7
+}
+
+#splashLogo img {
+  width:100%;
+}
+
+#splashContinueButtonContainer {
+  width: 100%;
+  position: absolute;
+  bottom: 15%;
+}
+
+#splashContinueButton {
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+
+/* ========================================================================================= */
+/* Beginning of Home page CSS */
+
+#homeContainer{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  bottom:0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#homeInnerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#homeLogo {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 7
+}
+
+#homeLogo img {
+  width:100%;
+}
+
+#homeInnerContainer .homeButton {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto 0px;
+}
+
+#homeSetupHeader h2 {
+  text-align: center;
+  color: var(--color_teal);
+  letter-spacing: 5px;
+}
+
+#homeSetupOptionHeader h3 {
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 3px;
+  margin: 15px 0px 0px;
+}
+
+#homeQuestionOptionButtons {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  justify-content: center;
+}
+
+#homeQuestionOptionButtons .optionButton {
+  width: 60px;
+  height: 60px;
+  margin: 15px 15px 0px 15px;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  background-color: var(--color_dark_Blue);
+}
+
+#homeQuestionOptionButtons .selected {
+  background-color: var(--color_teal);
+}
+
+#homeQuestionOptionButtons .single {
+  padding-left: 12px;
+}
+
+@media only screen and (min-height: 600px) {
+  #homeInnerContainer .homeButton {
+    margin: 40px 0px 0px;
+  }
+
+  #homeSetupOptionHeader h3 {
+    margin: 20px 0px 0px;
+  }
+
+  #homeQuestionOptionButtons .optionButton {
+    margin: 20px 15px 0px 15px;
+  }
+}
+
+/* ========================================================================================= */
+/* Beginning of Instructions CSS */
+
+#instructionsContainer{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  bottom:0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#instructionsInnerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#instructionsLogo {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 0
+}
+
+#instructionsLogo img {
+  width:100%;
+}
+
+#instructionsSetupHeader {
+    width: 100%;
+}
+
+#instructionsRecordImage {
+    background-image: url("../images/album-audio-classic-1616470.jpg");
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+#instructionsSetupHeader h2 {
+  text-align: center;
+  color: var(--color_teal);
+  letter-spacing: 5px;
+  text-align: center;
+  border-bottom: 3px solid var(--color_dark_Blue);
+}
+
+#instructionsListContainer {
+    margin-top:20px;
+    border-top: 3px solid var(--color_dark_Blue);
+}
+
+#instructionsListContainer ul {
+    padding-right: 20px;
+    padding-left: 20px;
+    list-style: none;
+}
+
+#backButton {
+    position: absolute;
+    top: 0px;
+    margin: 0 px;
+}
+
+@media only screen and (min-height: 600px) {
+
+    #instructionsRecordImage {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+
+    #instructionsRecordImage {
+        height: 140px;
+    }
+}
+
+/* ========================================================================================= */
+/* Beginning of game screen CSS */
+#gameContainer h3 {
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 3px;
+  margin: 15px 0px 15px;
+  color: var(--color_dark_Blue);
+}
+
+#gameScreenFlexContainer {
+    position: absolute;
+    top: 50px;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#gameContainer {}
+
+#gameContainer.blur {
+    filter: blur(6px);
+}
+
+
+#lyricsContainer {
+    margin: 10px auto;
+    width: 80%;
+    height: 180px;
+    overflow-y: scroll;
+    border-bottom: 3px solid var(--color_dark_Blue);
+    padding-bottom: 10px;
+}
+
+#lyrics {
+    color: var(--color_teal);
+}
+
+#scrollGuide {
+    margin: 0px;
+    text-align: center;
+    color: grey;
+}
+
+#answerContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#answerContainer button {
+    margin-bottom: 30px;
+}
+
+#timeCountDown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#timeCountDown h3 {
+    color: var(--color_dark_Blue);
+    margin: 0px;
+}
+
+#timeCountDown h3 strong {
+    color: var(--color_green);
+}
+
+#answerContainer button {
+    font-size: 12px;
+}
+
+#answerContainer .correct {
+    background-color: var(--color_green);
+    color: var(--color_white);
+}
+
+#answerContainer .incorrect {
+    background-color: var(--color_red);
+    color: var(--color_white);
+}
+
+#answerOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    display: none; /* Change to flex to display */
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#answerOverlay button {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#answerStatus {
+    z-index: 7;
+}
+
+#backButton {
+    position:absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#confirmExit {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    display: none; /* this should be changed to flex when backButton is pressed */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color_dark_Blue);
+}
+
+#confirmExit h4 {
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 400;
+    margin: 0px 0px 10px;
+}
+
+#confirmExit p {
+    margin: 0px;
+}
+
+#confirmExit #confirmButtons {
+    width: 60%;
+}
+
+#confirmExit #confirmButtons button {
+    margin-top: 20px;
+}
+
+
+
+@media only screen and (min-height: 700px) {
+
+    #lyricsContainer {
+        height: 250px;
+    }
+}
+
+@media only screen and (min-height: 800px) {
+
+    #lyricsContainer {
+        height: 350px;
+    }
+}
+
+@media only screen and (min-height: 600px) {
+
+    #instructionsRecordImage {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+
+    #instructionsRecordImage {
+        height: 140px;
+    }
+}
+
+/* ========================================================================================= */
+/* Beginning of summary screen CSS */
+
+#summaryFlexContainer {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#summaryContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#summaryContainer h2 {
+    color: var(--color_teal);
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    border-bottom: 3px solid var(--color_dark_Blue);
+}
+
+#summaryContainer h3 {
+    color: var(--color_dark_Blue);
+    font-size: 30px;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+#summaryContainer h4 {
+    color: var(--color_teal);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+#summaryContainer button {
+    margin-top: 30px;
+}
+
+/* ========================================================================================= */
+/* Beginning of results screen CSS */
+#resultsFlexContainer {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#resultsContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#resultsContainer h2 {
+    color: var(--color_teal);
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    border-bottom: 3px solid var(--color_dark_Blue);
+}
+
+#resultsContainer h3 {
+    color: var(--color_dark_Blue);
+    font-size: 25px;
+    margin: 0px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#resultsContainer h3 span {
+    color: var(--color_teal);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+#resultsContainer button {
+    margin-top: 30px;
 }
