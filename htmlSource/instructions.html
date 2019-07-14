@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Who Sang That?</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <link rel="stylesheet" href="style/main.css">
+    </head>
+    <body>
+        <div id="instructionsContainer">
+            <div id="instructionsInnerContainer">
+                <div id="instructionsLogo">
+                    <img src="images/logo.svg" alt="" >
+                </div>
+                <div id="instructionsSetupHeader">
+                    <h2>INSTRUCTIONS</h2>
+                    <div id="instructionsRecordImage"></div>
+                </div>
+                <div id="instructionsListContainer">
+                    <ul>
+                        <li><strong>Step 1</strong>: Select the number of songs you would like to guess</li>
+                        <li><strong>Step 2</strong>: Select the number of seconds you want to be able to guess</li>
+                        <li><strong>Step 3</strong>: Click Start Game</li>
+                        <li><strong>Step 4</strong>: Guess which artist sang the lyrics displayed</li>
+                        <li><strong>Step 5</strong>: Continue making awsome guesses until your game is over</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="backButton">
+            <img src="images/BackButton.svg" onclick="loadPage('home')">
+        </div>
+
+        <div id="noRotate">
+            <h2>Please don't Rotate</h2>
+            <p>This game is best played in portrait mode.</p>
+        </div>
+
+
+        <script src="scripts/noRotate.js"></script>
+    </body>
+</html>
