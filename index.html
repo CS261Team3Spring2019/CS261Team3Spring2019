@@ -24,7 +24,7 @@
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('script/sw.js')
+            navigator.serviceWorker.register('sw.js')
             .then(swReg => {
               console.log('Service Worker is registered', swReg);
             })
@@ -34,6 +34,5 @@
           });
         }
       </script>
-      <script type="text/javascript"></script>
 </body>
 </html>
