@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Who Sang That?</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <link rel="stylesheet" href="style/main.css">
+    </head>
+    <body>
+        <div id="resultsFlexContainer">
+            <div id="resultsContainer" class=""> <!--Add blur when answer button or back button is selected.-->
+                <h2>HERE'S YOUR RESULTS</h2>
+                <h3>You got <span>11 out of 15</span> correct  </h3>
+                <button id="nextQuestion" type="button" onclick="loadPage('home')">BACK TO HOME</button>
+            </div>
+        </div>
+
+        <div id="backButton">
+            <img src="images/BackButton.svg" onclick="confirmExit()">
+        </div>
+
+        <div id="confirmExit">
+            <h4>ARE YOU SURE?</h4>
+            <p>This will</p>
+            <p>end your game.</p>
+            <div id="confirmButtons">
+                <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
+                <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
+            </div>
+        </div>
+
+        <div id="noRotate">
+            <h2>Please don't Rotate</h2>
+            <p>This game is best played in portrait mode.</p>
+        </div>
+
+        <script src="scripts/noRotate.js"></script>
+    </body>
+</html>

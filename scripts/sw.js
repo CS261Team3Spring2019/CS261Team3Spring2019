@@ -4,11 +4,12 @@ const filesToCache = [                                              //cache ever
     'images/menu.png',
     'app.js',
     'style/main.css',
-    'index.html'
+    'index.html',
+    'scripts/content.js'
   ];
-  
+
   const staticCacheName = 'cachedpages';
-  
+
   self.addEventListener('install', event => {                       //If there is not an active Serviceworker install one
     console.log('Attempting to install service worker and cache the app shell');
     event.waitUntil(                                                //Extend the install call to cache the app shell files
@@ -18,7 +19,7 @@ const filesToCache = [                                              //cache ever
       })
     );
   });
-  
+
   self.addEventListener('fetch', event => {                         //Intercept client requests and handle them based on cached file availability
     console.log('Fetch event for ', event.request.url);
     event.respondWith(                                              //Determine what to return to the client based on the request
