@@ -2,7 +2,7 @@ const splash = `
 <div id="splashMainDiv"></div>
 <div id="splashLogoContainer">
     <div id="splashLogo">
-        <img src="images/logo.svg" alt="" >
+        <img src="images/Logo.svg" alt="" >
     </div>
 </div>
 <div id="splashContinueButtonContainer">
@@ -19,7 +19,7 @@ const home = `
 <div id="homeContainer">
     <div id="homeInnerContainer">
         <div id="homeLogo">
-            <img src="images/logo.svg" alt="" >
+            <img src="images/Logo.svg" alt="" >
         </div>
         <div class="homeButton">
             <button type="button" onclick="startGame()">START GAME</button>
@@ -50,7 +50,7 @@ const instructions = `
 <div id="instructionsContainer">
     <div id="instructionsInnerContainer">
         <div id="instructionsLogo">
-            <img src="images/logo.svg" alt="" >
+            <img src="images/Logo.svg" alt="" >
         </div>
         <div id="instructionsSetupHeader">
             <h2>INSTRUCTIONS</h2>
