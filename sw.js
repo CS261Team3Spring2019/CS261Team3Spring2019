@@ -1,12 +1,12 @@
 //Code modified from: https://developers.google.com/web/ilt/pwa/lab-caching-files-with-service-worker
 const filesToCache = [                                              //cache everything your app will need to load the app shell
     '/',
-    '/htmlSource/gamesScreen.html',
-    '/htmlSource/home.html',
-    '/htmlSource/instructions.html',
-    '/htmlSource/splash.html',
-    '/htmlSource/results.html',
-    '/htmlSource/summary.html',
+    // '/htmlSource/gamesScreen.html',
+    // '/htmlSource/home.html',
+    // '/htmlSource/instructions.html',
+    // '/htmlSource/results.html',
+    // '/htmlSource/splash.html',
+    // '/htmlSource/summary.html',
     // '/images/album-audio-classic-1616470.jpg',
     // '/images/artists-band-concert-2167131.jpg',
     // '/images/BackButton.svg',
