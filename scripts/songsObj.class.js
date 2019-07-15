@@ -11,17 +11,17 @@ songsObj.prototype.getRandomNum = function(limit = 1){
 
 
 songsObj.prototype.getSong = function(id){
-    return this.songArray[id];
+    return this.songsArray[id];
 };
 
 
 songsObj.prototype.getArraySize = function(){
-    return this.songArray.length;
+    return this.songsArray.length;
 };
 
 
-songsObj.prototype.getSongRandom = function(){
-    return this.songArray[this.getRandomNum()];
+songsObj.prototype.getSongRandom = function(ranLimit){
+    return this.songsArray[this.getRandomNum(ranLimit)];
 };
 
 
