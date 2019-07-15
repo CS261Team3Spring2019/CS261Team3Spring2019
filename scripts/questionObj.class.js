@@ -152,3 +152,16 @@ questionObj.prototype.resetBeenAnwsers = function(){
     }
 
 };
+
+
+questionObj.prototype.getQuestion = function(id){
+    if(id < this.questionArray.length)
+    {
+        return this.questionArray[id];
+    }
+    else
+    {
+        return false;
+    }
+};
+
