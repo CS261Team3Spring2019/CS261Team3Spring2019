@@ -103,9 +103,9 @@ Thunder, feel the thunder
         </div>
         <h3>Select Your Answer:</h3>
         <div id="answerContainer">
-            <button id="answer1" type="button" class="correct" onclick="submitAnswer(1)">ANSWER 1</button>
-            <button id="answer2" type="button" class="incorrect" onclick="submitAnswer(2)">ANSWER 2</button>
-            <button id="answer3" type="button" onclick="submitAnswer(3)">ANSWER 3</button>
+            <button id="answer1" type="button" onclick="sumbitAnswer(1)">ANSWER 1</button>
+            <button id="answer2" type="button" onclick="sumbitAnswer(2)">ANSWER 2</button>
+            <button id="answer3" type="button" onclick="sumbitAnswer(3)">ANSWER 3</button>
         </div>
     </div>
 </div>
