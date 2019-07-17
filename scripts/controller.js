@@ -12,6 +12,7 @@ pageMap = {
 
 window.onload = function () {
     loadPage('splash')
+    //init user
     secondThread()
 }
 
@@ -46,15 +47,18 @@ function startGame() {
 
 function confirmExit() {
     document.getElementById('confirmExit').style.display = 'flex'
+    document.getElementById('gameContainer').setAttribute('class', 'blur')
 }
 
 function sumbitAnswer(num) {
     document.getElementById('answerOverlay').style.display = 'flex'
+    document.getElementById('gameContainer').setAttribute('class', 'blur')
     let answerWas = 'incorrect'
     if (document.getElementById('answer' + num).innerHTML == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
         answerWas = 'correct'
+        //add correct count to user
     }
-    document.getElementById('answerOverlay').innerHTML = answerWas
+    document.getElementById('answerStatus').innerHTML = answerWas
     for (let i = 0; i < 3; i++) {
         if (document.getElementById('answer' + (i + 1)).innerHTML == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
             document.getElementById('answer' + (i + 1)).setAttribute('class', 'correct')
