@@ -15,7 +15,7 @@ function secondThread()
                 myQuestions = new questionObj();
                 myQuestions.setSongsObj(songs);
                 hasLoaded = true;
-                console.log(myQuestions);  
+               // console.log(myQuestions);  
             };
         }
     }
