@@ -5,7 +5,7 @@
         <title>Who Sang That?</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="../style/main.css">
     </head>
     <body>
         <div id="gameScreenFlexContainer">
@@ -40,11 +40,15 @@ Thunder, feel the thunder
         </div>
 
         <div id="backButton">
-            <img src="images/BackButton.svg" onclick="confirmExit()">
+            <img src="../images/BackButton.svg" onclick="confirmExit()">
+        </div>
+
+        <div id="timerTitle">
+            <h3>TIME LEFT:</h3>
         </div>
 
         <div id="timeCountDown">
-            <h3>TIME LEFT: <strong id="timeRemaining">15sec</strong></h3>
+            <h3><strong id="timeRemaining">15</strong><strong>sec</strong></h3>
         </div>
 
         <!-- Hidden until answer is selected, to display properly change display to flex in css -->

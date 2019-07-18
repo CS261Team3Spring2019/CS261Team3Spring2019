@@ -1,7 +1,6 @@
 function secondThread()
 {
     var w;
-
     if(typeof(Worker) !== "undefined")
     {
         if(typeof(w) == "undefined")
@@ -15,8 +14,21 @@ function secondThread()
                 myQuestions = new questionObj();
                 myQuestions.setSongsObj(songs);
                 hasLoaded = true;
-               // console.log(myQuestions);  
+                console.log('has loaded')
+                updateStartButton()
+               // console.log(myQuestions);
             };
         }
+    }
+}
+
+
+function updateStartButton() {
+    try {
+        document.getElementById('startButton').innerHTML = 'START GAME'
+        document.getElementById('startButton').setAttribute('class', '')
+    }
+    catch(err) {
+        // intentionally left empty
     }
 }

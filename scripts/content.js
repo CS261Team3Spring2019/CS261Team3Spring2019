@@ -22,7 +22,7 @@ const home = `
             <img src="images/Logo.svg" alt="" >
         </div>
         <div class="homeButton">
-            <button type="button" onclick="startGame()">START GAME</button>
+            <button type="button" onclick="startGame()" id="startButton" class="grey loading">LOADING</button>
         </div>
         <div class="homeButton">
             <button type="button" onclick="loadPage('instructions')">INSTRUCTIONS</button>
@@ -114,9 +114,14 @@ Thunder, feel the thunder
     <img src="images/BackButton.svg" onclick="confirmExit()">
 </div>
 
-<div id="timeCountDown">
-    <h3>TIME LEFT: <strong id="timeRemaining">15sec</strong></h3>
+<div id="timerTitle">
+    <h3>TIME LEFT:</h3>
 </div>
+
+<div id="timeCountDown">
+    <h3><strong id="timeRemaining">15</strong><strong>sec</strong></h3>
+</div>
+
 
 <!-- Hidden until answer is selected, to display properly change display to flex in css -->
 <div id="answerOverlay">

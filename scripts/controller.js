@@ -19,6 +19,10 @@ window.onload = function () {
 
 function loadPage(page) {
     app.innerHTML = pageMap[page]
+    if (page == 'home' & hasLoaded) {
+        updateStartButton()
+    }
+
 }
 
 function updateNumQuestions(num) {
@@ -43,6 +47,27 @@ function startGame() {
     myQuestions.setNumberQuestion(numQuestions)
     myQuestions.getSongAnwsers()
     getNextQuestion()
+
+    //timer
+    var timerDisplay = document.getElementById('timeRemaining')
+    var timer = new CountDownTimer(15)
+    var timeObj = CountDownTimer.parse(15)
+    var time = 15
+
+    format(timeObj.seconds)
+    timer.start();
+    timer.onTick(format)
+
+    function format(seconds) {
+        time = time - 1
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        timerDisplay.textContent = time + 1;
+        if (time <= 13 & timer.expired()) {
+            sumbitAnswer(4);
+        }
+    }
+
+
 }
 
 function confirmExit() {
@@ -88,4 +113,10 @@ function getNextQuestion() {
             document.getElementById('answer' + ((i + salt) % 3 + 1)).innerHTML = myQuestions.getQuestion(currentQuestion)[i]
         }
     }
+}
+
+function startTimer(second=15) {
+    setInterval(function() {
+
+    })
 }
