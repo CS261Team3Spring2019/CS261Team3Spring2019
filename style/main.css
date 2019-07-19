@@ -20,6 +20,7 @@ html, body, pre {
 .grey {
     border-color: var(--color_grey);
     color: var(--color_grey);
+    box-shadow: none;
 }
 
 .loading {
@@ -31,6 +32,7 @@ button {
   max-width: 400px;
   height: 60px;
   border: none;
+  padding: 0px;
 
   border-top-left-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -59,7 +61,7 @@ button {
   text-align: center;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 500px) {
   button {
     width: 100%;
     font-size: 20px;
@@ -182,6 +184,7 @@ button {
   cursor: pointer;
   color: white;
   background-color: var(--color_dark_Blue);
+  padding-left: 5px;
 }
 
 #homeQuestionOptionButtons .selected {
@@ -189,7 +192,7 @@ button {
 }
 
 #homeQuestionOptionButtons .single {
-  padding-left: 12px;
+  /* padding-left: 5px; */
 }
 
 @media only screen and (min-height: 600px) {
