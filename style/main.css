@@ -491,6 +491,10 @@ button {
     margin: 0 auto;
 }
 
+#summaryContainer.blur {
+  filter: blur(6px);
+}
+
 #summaryContainer h2 {
     color: var(--color_teal);
     font-size: 25px;
@@ -534,6 +538,10 @@ button {
 #resultsContainer {
     width: 80%;
     margin: 0 auto;
+}
+
+#resultsContainer.blur {
+  filter: blur(6px);
 }
 
 #resultsContainer h2 {
