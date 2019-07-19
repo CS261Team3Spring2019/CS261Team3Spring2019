@@ -25,6 +25,11 @@ function loadPage(page) {
     if (page == 'home' & hasLoaded) {
         updateStartButton()
     }
+    if (page == 'summary') {
+        document.getElementById('songTitle').innerHTML = myQuestions.getQuestion(currentQuestion)[0].getSong()
+        document.getElementById('songYear').innerHTML = myQuestions.getQuestion(currentQuestion)[0].getYear()
+        document.getElementById('songArtist').innerHTML = myQuestions.getQuestion(currentQuestion)[0].getArtist()
+    }
     currentPage = page
 }
 
