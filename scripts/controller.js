@@ -1,6 +1,5 @@
 let app = document.getElementById('app-loader')
 
-
 pageMap = {
     'splash': splash,
     'home': home,
@@ -22,7 +21,7 @@ function loadPage(page) {
     if (page == 'home' & hasLoaded) {
         updateStartButton()
     }
-
+    currentPage = page
 }
 
 function updateNumQuestions(num) {
@@ -43,47 +42,25 @@ function updateNumQuestions(num) {
 
 function startGame() {
     if (!hasLoaded) return;
-    loadPage('gameScreen')
+    siteUser = new userObj();
+    currentQuestion = 1;
     myQuestions.setNumberQuestion(numQuestions)
     myQuestions.getSongAnwsers()
     getNextQuestion()
-
-    //timer
-    var timerDisplay = document.getElementById('timeRemaining')
-    var timer = new CountDownTimer(15)
-    var timeObj = CountDownTimer.parse(15)
-    var time = 15
-
-    format(timeObj.seconds)
-    timer.start();
-    timer.onTick(format)
-
-    function format(seconds) {
-        time = time - 1
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        timerDisplay.textContent = time + 1;
-        if (time <= 13 & timer.expired()) {
-            sumbitAnswer(4);
-        }
-    }
-
-
 }
 
 function confirmExit() {
     document.getElementById('confirmExit').style.display = 'flex'
-    document.getElementById('gameContainer').setAttribute('class', 'blur')
+    if (currentPage == 'gameScreen') {
+        document.getElementById('gameContainer').setAttribute('class', 'blur')
+    } else {
+        document.getElementById(currentPage + 'Container').setAttribute('class', 'blur')
+    }
 }
 
 function sumbitAnswer(num) {
     document.getElementById('answerOverlay').style.display = 'flex'
     document.getElementById('gameContainer').setAttribute('class', 'blur')
-    let answerWas = 'incorrect'
-    if (document.getElementById('answer' + num).innerHTML == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
-        answerWas = 'correct'
-        //add correct count to user
-    }
-    document.getElementById('answerStatus').innerHTML = answerWas
     for (let i = 0; i < 3; i++) {
         if (document.getElementById('answer' + (i + 1)).innerHTML == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
             document.getElementById('answer' + (i + 1)).setAttribute('class', 'correct')
@@ -91,19 +68,44 @@ function sumbitAnswer(num) {
             document.getElementById('answer' + (i + 1)).setAttribute('class', 'incorrect')
         }
     }
+    let answerWas = 'incorrect'
+    if (!!num && document.getElementById('answer' + num).innerHTML == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
+        answerWas = 'correct'
+        siteUser.addNumCorrect()
+    } else {
+        siteUser.addNumIncorrect()
+    }
+    document.getElementById('answerStatus').innerHTML = answerWas
+
+    currentQuestion++
+    if (currentQuestion > numQuestions) {
+        //document.getElementById('answerStatus').onclick('endGame')
+    }
 }
 
 function endGame() {
-    loadPage('home')
+    loadPage('results')
+    document.getElementById('numCorrect').innerHTML = siteUser.getNumCorrect()
+    document.getElementById('numIncorrect').innerHTML = numQuestions
     numQuestions = 5
 }
 
 function cancelQuit() {
     document.getElementById('confirmExit').style.display = 'none'
+    if (currentPage == 'gameScreen') {
+        document.getElementById('gameContainer').setAttribute('class', 'none')
+    } else {
+        document.getElementById(currentPage + 'Container').setAttribute('class', 'none')
+    }
 }
 
 function getNextQuestion() {
-    console.log(myQuestions.getQuestion(currentQuestion))
+    if (currentQuestion >= numQuestions) {
+        endGame()
+        return
+    }
+    loadPage('gameScreen')
+
     document.getElementById('lyrics').innerHTML = myQuestions.getQuestion(currentQuestion)[0].getLyrics()
     let salt = Math.floor(Math.random() * 3) + 1
     for (let i = 0; i < 3; i++) {
@@ -113,10 +115,31 @@ function getNextQuestion() {
             document.getElementById('answer' + ((i + salt) % 3 + 1)).innerHTML = myQuestions.getQuestion(currentQuestion)[i]
         }
     }
+
+    //timer
+    timer = new CountDownTimer(15)
+    var timerDisplay = document.getElementById('timeRemaining')
+    var timeObj = CountDownTimer.parse(15)
+    var time = 15
+    var forQuestionNumber = currentQuestion
+
+    format(timeObj.seconds)
+    timer.start();
+    timer.onTick(format)
+
+    function format(seconds) {
+        if (forQuestionNumber != currentQuestion) return;
+        time = time - 1
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        timerDisplay.textContent = time + 1;
+        if (time <= 13 & timer.expired()) {
+            sumbitAnswer(0);
+        }
+    }
 }
 
-function startTimer(second=15) {
-    setInterval(function() {
-
+function startTimer(second = 15) {
+    setInterval(function () {
+        //sumbitAnswer(0)
     })
 }

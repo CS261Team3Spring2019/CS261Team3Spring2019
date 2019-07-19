@@ -179,13 +179,13 @@ const results = `
 <div id="resultsFlexContainer">
     <div id="resultsContainer" class=""> <!--Add blur when answer button or back button is selected.-->
         <h2>HERE'S YOUR RESULTS</h2>
-        <h3>You got <span>11 out of 15</span> correct  </h3>
-        <button id="nextQuestion" type="button" onclick="getNextQuestion()">BACK TO HOME</button>
+        <h3>You got <span id="numCorrect">11</span> out of <span id="numIncorrect">15</span> correct  </h3>
+        <button id="nextQuestion" type="button" onclick="loadPage('home')">BACK TO HOME</button>
     </div>
 </div>
 
 <div id="backButton">
-    <img src="images/BackButton.svg" onclick="confirmExit()">
+    <img src="images/BackButton.svg" onclick="loadPage('home')">
 </div>
 
 <div id="confirmExit">
