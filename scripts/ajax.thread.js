@@ -8,7 +8,6 @@ function secondThread()
             w = new Worker("scripts/apiObj.class.js");
             w.postMessage(true);
             w.onmessage = function(event){
-                hasLoaded = true;
                 songs = new songsObj();
                 songs.createSongsArray(event.data);
                 myQuestions = new questionObj();
