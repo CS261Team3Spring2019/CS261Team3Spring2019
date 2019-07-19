@@ -61,6 +61,10 @@ button {
   text-align: center;
 }
 
+#soundEffects {
+    display: none;
+}
+
 @media only screen and (max-width: 500px) {
   button {
     width: 100%;

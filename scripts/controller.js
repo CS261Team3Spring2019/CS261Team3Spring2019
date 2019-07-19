@@ -17,6 +17,10 @@ window.onload = function () {
 
 
 function loadPage(page) {
+    whoosh.controls = false
+    whoosh.volumn = 0.3
+    whoosh.load()
+    whoosh.play()
     app.innerHTML = pageMap[page]
     if (page == 'home' & hasLoaded) {
         updateStartButton()
@@ -68,9 +72,9 @@ function sumbitAnswer(num) {
             document.getElementById('answer' + (i + 1)).setAttribute('class', 'incorrect')
         }
     }
-    let answerWas = 'incorrect'
+    let answerWas = 'INCORRECT'
     if (!!num && document.getElementById('answer' + num).innerHTML == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
-        answerWas = 'correct'
+        answerWas = 'CORRECT'
         siteUser.addNumCorrect()
     } else {
         siteUser.addNumIncorrect()
@@ -116,6 +120,12 @@ function getNextQuestion() {
         }
     }
 
+    // Audio Controls
+    // var audio = document.getElementById('soundEffects')
+    tick.controls = false
+    tick.volumn = 0.3
+    tick.load()
+
     //timer
     timer = new CountDownTimer(15)
     var timerDisplay = document.getElementById('timeRemaining')
@@ -131,6 +141,7 @@ function getNextQuestion() {
         if (forQuestionNumber != currentQuestion) return;
         time = time - 1
         seconds = seconds < 10 ? "0" + seconds : seconds;
+        tick.play()
         timerDisplay.textContent = time + 1;
         if (time <= 13 & timer.expired()) {
             sumbitAnswer(0);
