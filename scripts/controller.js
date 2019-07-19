@@ -100,7 +100,7 @@ function cancelQuit() {
 }
 
 function getNextQuestion() {
-    if (currentQuestion > numQuestions) {
+    if (currentQuestion >= numQuestions) {
         endGame()
         return
     }
