@@ -100,6 +100,10 @@ function cancelQuit() {
 }
 
 function getNextQuestion() {
+    if (currentQuestion > numQuestions) {
+        endGame()
+        return
+    }
     loadPage('gameScreen')
 
     document.getElementById('lyrics').innerHTML = myQuestions.getQuestion(currentQuestion)[0].getLyrics()
