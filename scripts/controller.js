@@ -71,21 +71,21 @@ function sumbitAnswer(num) {
     document.getElementById('answerOverlay').style.display = 'flex'
     document.getElementById('gameContainer').setAttribute('class', 'blur')
     for (let i = 0; i < 3; i++) {
-        if (document.getElementById('answer' + (i + 1)).innerHTML == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
+        if (document.getElementById('answer' + (i + 1)).innerHTML.replace('&amp;', '&') == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
             document.getElementById('answer' + (i + 1)).setAttribute('class', 'correct')
         } else {
             document.getElementById('answer' + (i + 1)).setAttribute('class', 'incorrect')
         }
     }
     let answerWas = 'INCORRECT'
-    if (!!num && document.getElementById('answer' + num).innerHTML == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
+    if (!!num && document.getElementById('answer' + num).innerHTML.replace('&amp;', '&') == myQuestions.getQuestion(currentQuestion)[0].getArtist()) {
         answerWas = 'CORRECT'
         siteUser.addNumCorrect()
     } else {
         siteUser.addNumIncorrect()
     }
     document.getElementById('answerStatus').innerHTML = answerWas
-
+    console.log('next question: ' + currentQuestion)
     currentQuestion++
     if (currentQuestion > numQuestions) {
         //document.getElementById('answerStatus').onclick('endGame')
@@ -139,23 +139,17 @@ function getNextQuestion() {
     var forQuestionNumber = currentQuestion
 
     format(timeObj.seconds)
-    timer.start();
+    timer.start()
     timer.onTick(format)
 
     function format(seconds) {
-        if (forQuestionNumber != currentQuestion) return;
+        if (forQuestionNumber != currentQuestion) return
         time = time - 1
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+        seconds = seconds < 10 ? "0" + seconds : seconds
         tick.play()
-        timerDisplay.textContent = time + 1;
+        timerDisplay.textContent = time + 1
         if (time <= 13 & timer.expired()) {
-            sumbitAnswer(0);
+            sumbitAnswer(-1)
         }
     }
-}
-
-function startTimer(second = 15) {
-    setInterval(function () {
-        //sumbitAnswer(0)
-    })
 }
