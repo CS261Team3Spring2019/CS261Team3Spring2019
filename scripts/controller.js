@@ -30,6 +30,9 @@ function loadPage(page) {
         document.getElementById('songTitle').innerHTML = myQuestions.getQuestion(summaryQuestionReference)[0].getSong()
         document.getElementById('songYear').innerHTML = myQuestions.getQuestion(summaryQuestionReference)[0].getYear()
         document.getElementById('songArtist').innerHTML = myQuestions.getQuestion(summaryQuestionReference)[0].getArtist()
+        if (currentQuestion >= numQuestions) {
+            document.getElementById('nextQuestion').innerHTML = 'View Results'
+        }
     }
     currentPage = page
 }
@@ -53,7 +56,7 @@ function updateNumQuestions(num) {
 function startGame() {
     if (!hasLoaded) return;
     siteUser = new userObj();
-    currentQuestion = 1;
+    currentQuestion = 0;
     myQuestions.setNumberQuestion(numQuestions)
     myQuestions.getSongAnwsers()
     getNextQuestion()
@@ -88,9 +91,6 @@ function sumbitAnswer(num) {
     document.getElementById('answerStatus').innerHTML = answerWas
     console.log('next question: ' + currentQuestion)
     currentQuestion++
-    if (currentQuestion > numQuestions) {
-        //document.getElementById('answerStatus').onclick('endGame')
-    }
 }
 
 function endGame() {
