@@ -26,9 +26,10 @@ function loadPage(page) {
         updateStartButton()
     }
     if (page == 'summary') {
-        document.getElementById('songTitle').innerHTML = myQuestions.getQuestion(currentQuestion)[0].getSong()
-        document.getElementById('songYear').innerHTML = myQuestions.getQuestion(currentQuestion)[0].getYear()
-        document.getElementById('songArtist').innerHTML = myQuestions.getQuestion(currentQuestion)[0].getArtist()
+        let summaryQuestionReference = currentQuestion -1
+        document.getElementById('songTitle').innerHTML = myQuestions.getQuestion(summaryQuestionReference)[0].getSong()
+        document.getElementById('songYear').innerHTML = myQuestions.getQuestion(summaryQuestionReference)[0].getYear()
+        document.getElementById('songArtist').innerHTML = myQuestions.getQuestion(summaryQuestionReference)[0].getArtist()
     }
     currentPage = page
 }
