@@ -8,19 +8,31 @@ function secondThread()
             w = new Worker("scripts/apiObj.class.js");
             w.postMessage(true);
             w.onmessage = function(event){
-                songs = new songsObj();
-                songs.createSongsArray(event.data);
-                myQuestions = new questionObj();
-                myQuestions.setSongsObj(songs);
-                hasLoaded = true;
-                console.log('has loaded')
-                updateStartButton()
-               // console.log(myQuestions);
+
+                if(event.data.status == "done")
+                {
+                    songs = new songsObj();
+                    songs.createSongsArray(event.data.data);
+                    myQuestions = new questionObj();
+                    myQuestions.setSongsObj(songs);
+                    precentLoaded = 100;
+                    hasLoaded = true;
+                    updateStartButton();
+                    w.terminate();
+                }
+                else if(event.data.status == "percent")
+                {
+                    precentLoaded = event.data.data;
+                }
+                else
+                {
+                    console.log(event.data.data);
+                    w.terminate();
+                }
             };
         }
     }
 }
-
 
 function updateStartButton() {
     try {
