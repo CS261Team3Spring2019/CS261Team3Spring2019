@@ -2,7 +2,7 @@ function userObj()
 {
     this.numCorrect = 0;
     this.numIncorrect = 0;
-    this.fastestTime = 0;
+    this.fastestTime = null;
 }
 
 
@@ -32,5 +32,24 @@ userObj.prototype.getFastestTime = function(){
 
 
 userObj.prototype.setFastestTime = function(fastTime){
-    this.fastestTime = fastTime;
+
+    if(this.fastestTime != null)
+    {
+        if(this.fastestTime > fastTime)
+        {
+            this.fastestTime = fastTime;
+        }
+    }
+    else
+    {
+        this.fastestTime = fastTime;
+    }
 };
+
+
+userObj.prototype.getPercentRight = function(){
+    totalQuesiton = this.numCorrect + this.numIncorrect;
+    return ((this.numCorrect / totalQuesiton) * 100).toFixed(1);
+};
+
+
