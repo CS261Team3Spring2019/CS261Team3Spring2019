@@ -17,10 +17,13 @@ window.onload = function () {
 
 
 function loadPage(page) {
+    if(page != 'splash')
+    {
     whoosh.controls = false
     whoosh.volumn = 0.3
-    whoosh.load()
+    //whoosh.load()
     whoosh.play()
+    }
     app.innerHTML = pageMap[page]
     if (page == 'home' & hasLoaded) {
         updateStartButton()
