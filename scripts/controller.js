@@ -140,7 +140,7 @@ function getNextQuestion() {
     // var audio = document.getElementById('soundEffects')
     tick.controls = false
     tick.volumn = 0.3
-    tick.load()
+    //tick.load()
 
     //timer
     timer = new CountDownTimer(15)
