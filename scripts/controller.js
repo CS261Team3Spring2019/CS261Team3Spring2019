@@ -98,6 +98,7 @@ function endGame() {
     document.getElementById('numCorrect').innerHTML = siteUser.getNumCorrect()
     document.getElementById('numIncorrect').innerHTML = numQuestions
     numQuestions = 5
+    currentQuestion = -1
 }
 
 function cancelQuit() {
