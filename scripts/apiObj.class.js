@@ -38,8 +38,15 @@ apiObjCall.prototype.getSongsLoop = function(){
 
         if(this.readyState == 4 && this.status == 200)
         {
-            currentObj.setResponsObj(this.responseText);
-            currentObj.apiReturn();
+            if(currentObj.headerStatus(this.responseText) == 200)
+            {
+                currentObj.setResponsObj(this.responseText);
+                currentObj.apiReturn();
+            }
+            else
+            {
+                postMessage({"status":"error","data":"Error: API Key"});
+            }
         }
     };
 
@@ -123,7 +130,12 @@ apiObjCall.prototype.apiReturn = function(){
     for(i = 0; i < this.responsObj.length; i++)
     {
         if(this.responsObj[i].track.explicit == 0)
-        this.setSongsArray(this.responsObj[i]);
+        {
+            this.setSongsArray(this.responsObj[i]);
+        }
+
+        postMessage({"status":"percent",
+                     "data":(i / this.responsObj.length) * 100});
     }
 };
 
@@ -139,9 +151,17 @@ apiObjCall.prototype.cleanSongTxt = function(songText){
     return songText;
 };
 
+apiObjCall.prototype.headerStatus = function(responsTxt){
+    responsTxt = responsTxt.replace("callback(","");
+    responsTxt = responsTxt.replace(");","");
+    return JSON.parse(responsTxt).message.header.status_code;
+};
 
 onmessage = function(event){
     var songsApiCall = new apiObjCall();
     songsApiCall.getSongsLoop();
-    this.postMessage(songsApiCall.songArray);
+    this.postMessage({"status":"done","data":songsApiCall.songArray});
 };
+
+
+
