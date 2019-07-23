@@ -157,7 +157,7 @@ function getNextQuestion() {
        if (forQuestionNumber != currentQuestion)
         {
             if(document.getElementById('answerStatus').innerHTML.toLowerCase()
-               == "correct" && currentPage == 'summary')
+               == "correct" && currentPage == 'currentPage')
             {
                 siteUser.setFastestTime(15 - time);
             }
