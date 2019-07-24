@@ -39,6 +39,8 @@ html, body, pre {
     width: 1%;
     height: 10px;
     background-color: var(--color_green);
+    -webkit-transition: width 1s;
+    transition: width 1s;
 }
 
 button {
@@ -109,13 +111,32 @@ button {
   width: 100%;
   position: absolute;
   top: 10%;
+  -webkit-animation-name: movelogo;
+  -webkit-animation-duration: 4s;
+  animation-name: movelogo;
+  animation-duration: 4s;
 }
 
 #splashLogo {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  z-index: 7
+  z-index: 7;
+  -webkit-animation-name: movelogo;
+  -webkit-animation-duration: 4s;
+  animation-name: movelogo;
+  animation-duration: 4s;
+
+}
+
+@keyframes movelogo {
+    from {
+        top: -100%;
+    }
+    to {
+        top:10%;
+        transform: rotate(360deg);
+    }
 }
 
 #splashLogo img {
@@ -213,6 +234,7 @@ button {
   /* padding-left: 5px; */
 }
 
+
 @media only screen and (min-height: 600px) {
   #homeInnerContainer .homeButton {
     margin: 40px 0px 0px;
@@ -247,6 +269,8 @@ button {
   align-items: center;
 }
 #instructionsLogo {
+  position: relative;
+  top: 10px;
   width: 25%;
   margin-left: auto;
   margin-right: auto;

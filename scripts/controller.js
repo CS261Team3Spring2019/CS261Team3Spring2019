@@ -95,7 +95,6 @@ function confirmExit() {
 
 // Used to verify if the answer is correct or not
 function sumbitAnswer(num) {
-    answerStatus = document.getElementById('answerStatus').innerHTML.toLowerCase()
     document.getElementById('answerOverlay').style.display = 'flex'
     document.getElementById('gameContainer').setAttribute('class', 'blur')
     for (let i = 0; i < 3; i++) {
@@ -116,6 +115,7 @@ function sumbitAnswer(num) {
         }
     }
     document.getElementById('answerStatus').innerHTML = answerWas
+    answerStatus = document.getElementById('answerStatus').innerHTML.toLowerCase()
     currentQuestion++
 }
 
@@ -126,9 +126,13 @@ function endGame() {
     document.getElementById('numIncorrect').innerHTML = numQuestions
     numQuestions = 5
     currentQuestion = -1
-    siteUser.getPercentRight();
-    siteUser.getFastestTime();
+    if (siteUser.getFastestTime == null) {
+        document.getElementById('percentCorrectContainer').style.display = 'none'
+    } else {
+        document.getElementById('percentCorrect').innerHTML = siteUser.getPercentRight()
+    }
 
+    document.getElementById('fastestTime').innerHTML = siteUser.getFastestTime()
 }
 
 // Used to return to the game if the user doesn't want to quit

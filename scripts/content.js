@@ -157,12 +157,15 @@ const results = `
     <div id="resultsContainer" class=""> <!--Add blur when answer button or back button is selected.-->
         <h2>HERE'S YOUR RESULTS</h2>
         <h3>You got <span id="numCorrect">11</span> out of <span id="numIncorrect">15</span> correct  </h3>
+        <h3 id="percentCorrectContainer">Percent Correct: <span id="percentCorrect">20</span>%</h3>
+        <h3>Fastest Time: <span id="fastestTime">3</span> sec</h3>
         <button id="nextQuestion" type="button" onclick="loadPage('home')">BACK TO HOME</button>
+
     </div>
 </div>
 
 <div id="backButton">
-    <img src="images/BackButton.svg" onclick="loadPage('home')">
+    <img src="images/BackButton.svg" onclick="confirmExit()">
 </div>
 
 <div id="confirmExit">
@@ -173,4 +176,11 @@ const results = `
         <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
         <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
     </div>
-</div>`
+</div>
+
+<div id="noRotate">
+    <h2>Please don't Rotate</h2>
+    <p>This game is best played in portrait mode.</p>
+</div>
+
+<script src="scripts/noRotate.js"></script>`
