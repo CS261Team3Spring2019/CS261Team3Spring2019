@@ -10,10 +10,7 @@ const splash = `
         <button type="button" onclick="loadPage('home')">CONTINUE</button>
     </div>
 </div>
-<div id="noRotate">
-    <h2>Please don't Rotate</h2>
-    <p>This game is best played in portrait mode.</p>
-</div>`
+`
 
 const home = `
 <div id="homeContainer">
@@ -39,11 +36,6 @@ const home = `
             <button id="homeOptionButtons15" class="optionButton" onclick="updateNumQuestions(15)">15</button>
         </div>
     </div>
-</div>
-
-<div id="noRotate">
-    <h2>Please don't Rotate</h2>
-    <p>This game is best played in portrait mode.</p>
 </div>`
 
 const instructions = `
@@ -71,11 +63,6 @@ const instructions = `
 
 <div id="backButton">
     <img src="images/BackButton.svg" onclick="loadPage('home')">
-</div>
-
-<div id="noRotate">
-    <h2>Please don't Rotate</h2>
-    <p>This game is best played in portrait mode.</p>
 </div>`
 
 const gameScreen = `
@@ -137,11 +124,6 @@ Thunder, feel the thunder
         <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
         <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
     </div>
-</div>
-
-<div id="noRotate">
-    <h2>Please don't Rotate</h2>
-    <p>This game is best played in portrait mode.</p>
 </div>`
 
 const summary = `
@@ -168,11 +150,6 @@ const summary = `
         <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
         <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
     </div>
-</div>
-
-<div id="noRotate">
-    <h2>Please don't Rotate</h2>
-    <p>This game is best played in portrait mode.</p>
 </div>`
 
 const results = `
@@ -196,9 +173,4 @@ const results = `
         <button id="confirmYes" type="button" onclick="endGame()">QUIT</button>
         <button id="confirmNo" type="button" onclick="cancelQuit()">CONTINUE</button>
     </div>
-</div>
-
-<div id="noRotate">
-    <h2>Please don't Rotate</h2>
-    <p>This game is best played in portrait mode.</p>
 </div>`

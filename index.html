@@ -22,6 +22,11 @@
         <div id="bar"></div>
     </div>
 
+    <div id="noRotate">
+        <h2>Please don't Rotate</h2>
+        <p>This game is best played in portrait mode.</p>
+    </div>
+
     <script src="scripts/timer.js" charset="utf-8"></script>
     <script src="scripts/variables.js" charset="utf-8"></script>
     <script src="scripts/userObj.class.js" charset="utf-8"></script>
@@ -31,15 +36,16 @@
     <script src="scripts/ajax.thread.js" charset="utf-8"></script>
     <script src="scripts/content.js" charset="utf-8"></script>
     <script src="scripts/controller.js" charset="utf-8"></script>
+    <!-- <script src="scripts/noRotate.js" charset="utf-8"></script> -->
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
             navigator.serviceWorker.register('sw.js')
             .then(swReg => {
-              console.log('Service Worker is registered', swReg);
+              // console.log('Service Worker is registered', swReg);
             })
             .catch(err => {
-              console.error('Service Worker Error', err);
+              // console.error('Service Worker Error', err);
             });
           });
         }

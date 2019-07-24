@@ -159,7 +159,7 @@ button {
   width: 25%;
   margin-left: auto;
   margin-right: auto;
-  z-index: 7
+  z-index: -1
 }
 
 #homeLogo img {
@@ -415,6 +415,7 @@ button {
     flex-direction: column;
     align-content: center;
     justify-content: center;
+
 }
 
 #answerOverlay button {
@@ -423,7 +424,7 @@ button {
 }
 
 #answerStatus {
-    z-index: 7;
+    z-index: 0;
 }
 
 #backButton {

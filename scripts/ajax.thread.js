@@ -26,7 +26,7 @@ function secondThread()
                 }
                 else
                 {
-                    console.log(event.data.data);
+                    // console.log(event.data.data);
                     w.terminate();
                 }
             };

@@ -1,6 +1,4 @@
 // Retrieved from StackOverflow: https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer
-
-
 function CountDownTimer(duration, granularity) {
   this.duration = duration;
   this.granularity = granularity || 1000;
