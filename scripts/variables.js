@@ -8,3 +8,4 @@ var time; // current timer
 var tick = document.getElementById('tick') // Used to add sound effects to the game
 var whoosh = document.getElementById('whoosh')
 var percentLoaded = null;
+var answerStatus = null;

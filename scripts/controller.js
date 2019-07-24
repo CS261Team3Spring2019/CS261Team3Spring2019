@@ -76,6 +76,7 @@ function confirmExit() {
 }
 
 function sumbitAnswer(num) {
+    answerStatus = document.getElementById('answerStatus').innerHTML.toLowerCase()
     document.getElementById('answerOverlay').style.display = 'flex'
     document.getElementById('gameContainer').setAttribute('class', 'blur')
     for (let i = 0; i < 3; i++) {
@@ -157,9 +158,7 @@ function getNextQuestion() {
     function format(seconds) {
        if (forQuestionNumber != currentQuestion)
         {
-            if(document.getElementById('answerStatus').innerHTML.toLowerCase()
-               == "correct" && currentPage == 'gameScreen')
-            {
+            if(answerStatus == "correct" && currentPage == 'gameScreen') {
                 siteUser.setFastestTime(15 - time);
             }
             return;
