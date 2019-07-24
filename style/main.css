@@ -27,6 +27,20 @@ html, body, pre {
 
 }
 
+#progress {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: var(--color_grey);
+}
+
+#bar {
+    width: 1%;
+    height: 10px;
+    background-color: var(--color_green);
+}
+
 button {
   width: 100%;
   max-width: 400px;

@@ -13,6 +13,7 @@ window.onload = function () {
     loadPage('splash')
     //init user
     secondThread()
+    loadingProgressBar()
 }
 
 
@@ -104,10 +105,10 @@ function endGame() {
     document.getElementById('numCorrect').innerHTML = siteUser.getNumCorrect()
     document.getElementById('numIncorrect').innerHTML = numQuestions
     numQuestions = 5
-    currentQuestion = -1    
+    currentQuestion = -1
     siteUser.getPercentRight();
     siteUser.getFastestTime();
-    
+
 }
 
 function cancelQuit() {
@@ -169,6 +170,21 @@ function getNextQuestion() {
         timerDisplay.textContent = time + 1
         if (time <= 13 & timer.expired()) {
             sumbitAnswer(-1)
+        }
+    }
+}
+
+function loadingProgressBar() {
+    var elem = document.getElementById("bar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width = percentLoaded;
+            elem.style.width = width + '%';
         }
     }
 }

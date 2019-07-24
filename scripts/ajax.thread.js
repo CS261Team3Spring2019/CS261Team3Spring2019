@@ -15,14 +15,14 @@ function secondThread()
                     songs.createSongsArray(event.data.data);
                     myQuestions = new questionObj();
                     myQuestions.setSongsObj(songs);
-                    precentLoaded = 100;
+                    percentLoaded = 100;
                     hasLoaded = true;
                     updateStartButton();
                     w.terminate();
                 }
                 else if(event.data.status == "percent")
                 {
-                    precentLoaded = event.data.data;
+                    percentLoaded = event.data.data;
                 }
                 else
                 {

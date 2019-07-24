@@ -7,5 +7,4 @@ var currentPage; // string of current page should match the pageMap key
 var time; // current timer
 var tick = document.getElementById('tick') // Used to add sound effects to the game
 var whoosh = document.getElementById('whoosh')
-var precentLoaded = null;
-
+var percentLoaded = null;
