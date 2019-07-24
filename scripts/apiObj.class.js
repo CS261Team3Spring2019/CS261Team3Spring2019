@@ -5,7 +5,8 @@ function apiObjCall()
     this.totalPageNum = 2;
     this.responsObj = null;
     //this.apikey = "c51c885aa28518b28abb7fd7b889fd13";
-    this.apikey = "38e6b7d1ede31d19707b30be4ea6e568";
+    //this.apikey = "38e6b7d1ede31d19707b30be4ea6e568";
+    this.apikey = "bf3318dc3dfbf82634a416aefc98cb4f";
     this.apiUrl = "https://api.musixmatch.com/ws/1.1/";
     this.trackEndpoint = "chart.tracks.get";
     this.albumEndpoint = "album.get";
